@@ -1,4 +1,4 @@
-import {Grid,styled} from '@mui/material';
+import { Grid, styled } from '@mui/material';
 import { imageURL } from '../../Constants/data';
 
 const Wrapper=styled(Grid)`

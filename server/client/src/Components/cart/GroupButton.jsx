@@ -1,6 +1,5 @@
 import { Button, ButtonGroup, styled } from "@mui/material";
 import { useState } from "react";
-import { useDispatch } from 'react-redux';
 // import { useSelector } from "react-redux";
 // import {addToCart} from '../../redux/actions/cartAction';
 const Component = styled(ButtonGroup)`

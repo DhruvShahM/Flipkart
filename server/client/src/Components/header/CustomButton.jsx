@@ -65,8 +65,6 @@ const CustomButtons = () => {
         setOpen(true);
     }
 
-    const navigate = useNavigate();
-
     return (
         <Wrapper>
             {

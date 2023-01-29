@@ -125,10 +125,10 @@ const LoginDialog = ({ open, setOpen }) => {
         setAccount(signup.firstname);
     }
 
-    const loginInitialValue={
-        username:'',
-        password :''
-    }
+    // const loginInitialValue={
+    //     username:'',
+    //     password :''
+    // }
 
     const onValueChange=(e)=>{
         setLogin({...login,[e.target.name]:e.target.value});

@@ -1,5 +1,5 @@
 import { Box, styled, Typography } from "@mui/material";
-import { useState,useEffect } from "react";
+import { useEffect, useState } from "react";
 
 
 const Heading=styled(Box)`
