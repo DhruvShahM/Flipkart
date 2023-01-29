@@ -37,10 +37,6 @@ const TotalView = ({ cartItems }) => {
     const [price,setPrice]=useState(0);
     const [discount,setDiscount]=useState(0);
 
-    useEffect(()=>{
-        totalAmount();
-    },[cartItems]);
-
     const totalAmount=()=>{
         let price=0,discount=0;
         cartItems.map(item=>{
@@ -50,6 +46,11 @@ const TotalView = ({ cartItems }) => {
         setPrice(price);
         setDiscount(discount);
     }
+    
+    useEffect(()=>{
+        totalAmount();
+    },[cartItems]);
+
 
     return (
         <Box>
