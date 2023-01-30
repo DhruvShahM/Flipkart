@@ -5,10 +5,10 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
+    "start": "react-scripts start",
     "client-install": "cd client && npm install",
-    "client-build": "cd client && DISABLE_ESLINT_PLUGIN=true react-scripts build",
-    "build":"npm run client-install && npm run client-build"
+    "client-build": "npm react-scripts build",
+    "build":"react-scripts build"
   },
   "keywords": [],
   "author": "",
