@@ -10,6 +10,7 @@ import {v4 as uuid} from 'uuid';
 
 const app=express();
 app.use(cors());
+app.options('*', cors());
 const absolute=path.resolve("./server/.env")
 const result =dotenv.config({path:absolute});
 if (result.error) {
