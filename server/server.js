@@ -38,8 +38,8 @@ Connection(URL);
 
 if(process.env.NODE_ENV==='production'){
   // console.lof('client build running');
-  app.use(express.static('client/build'));
 }
+app.use(express.static('client/build'));
 
 app.listen(PORT,()=>console.log(`Server is running successfully on PORT ${PORT}`));
 // DefaultData();
