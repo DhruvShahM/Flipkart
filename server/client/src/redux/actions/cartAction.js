@@ -1,6 +1,7 @@
 import axios from 'axios';
 import * as  actionTypes from '../constants/cartConstants';
-const url = '';
+const { REACT_APP_API_HOST } = process.env;
+const url = REACT_APP_API_HOST;
 
 export const addToCart = (id, quantity) => async (dispatch) => {
     try {

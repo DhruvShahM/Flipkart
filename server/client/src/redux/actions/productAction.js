@@ -1,7 +1,9 @@
 import axios from 'axios';
 import * as actionTypes from '../constants/productConstants';
 
-const url = '';
+const { REACT_APP_API_HOST } = process.env;
+const url = REACT_APP_API_HOST;
+
 // axios.defaults.baseURL = 'http://localhost:8000';
 
 export const getProducts = () => async (dispatch) => {

@@ -1,6 +1,6 @@
 import axios from 'axios';
-
-const URL = '';
+const { REACT_APP_API_HOST } = process.env;
+const URL = REACT_APP_API_HOST;
 export const authenticateSignup = async (data) => {
     try {
         const headers = {
@@ -8,7 +8,7 @@ export const authenticateSignup = async (data) => {
         };
         return await axios.post(`${URL}/signup`, data, { headers });
     } catch (error) {
-        console.log(error);
+    console.log(error);
     }
 }
 
