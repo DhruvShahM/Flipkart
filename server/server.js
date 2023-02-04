@@ -37,7 +37,7 @@ const URL=process.env.MONGODB_URI || `mongodb://${USERNAME}:${PASSWORD}@ac-xduuc
 Connection(URL);
 
 if(process.env.NODE_ENV==='production'){
-  console.lof('client build running');
+  // console.lof('client build running');
   app.use(express.static('client/build'));
 }
 
