@@ -15,3 +15,13 @@ export const addToCart = (id, quantity) => async (dispatch) => {
 export const removeFromCart = (id) => (dispatch) => {
     dispatch({ type: actionTypes.REOMVE_FROM_CART, id: id });
 }
+
+export const removeQuantityFromCart = (id, quantity) => async (dispatch) => {
+    try {
+        const { data } = await axios.get(`${url}/product/${id}`);
+        dispatch({ type: actionTypes.REMOVE_QUANTITY_TO_CART, payload: { ...data, quantity } })
+    } catch (error) {
+        dispatch({ type: actionTypes.REMOVE_QUANTITY_TO_CART_ERROR, payload: error.message })
+    }
+}
+

@@ -45,15 +45,26 @@ const LeftComponent = styled(Grid)(({ theme }) => ({
 }))
 
 const Cart = () => {
-    const buyNow = async () => {
-        let response = await payUsingPaytm({ amount: 500, email: 'dhruvshahlinkedin@gmail.com' });
+   
+    const { cartItems } = useSelector(state => state.cart);
+      let finalCartItems =cartItems.filter((obj, index, self) => {
+        return self.map(obj => obj.id).indexOf(obj.id) === index;
+      });
+      const buyNow = async () => {
+        let price=0,discount=0;
+        cartItems.map((item)=>{
+            price+=item.price.mrp;
+            discount+=(item.price.mrp-item.price.cost);
+        });
+        const amount=price-discount+40;
+        console.log(amount);
+        let response = await payUsingPaytm({ amount: amount, email: 'dhruvshahlinkedin@gmail.com' });
         let information = {
             action: 'https://securegw-stage.paytm.in/order/process',
             params: response
         };
         post(information);
     }
-    const { cartItems } = useSelector(state => state.cart);
     return (
         <>
             {
@@ -64,7 +75,7 @@ const Cart = () => {
                                 <Header>My Cart ({cartItems.length})</Header>
                             </Box>
                             {
-                                cartItems.map(item => {
+                                finalCartItems.map(item => {
                                     return <CartItem key={item.id} item={item} />
                                 })
                             }

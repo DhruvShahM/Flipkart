@@ -43,7 +43,7 @@ const CartItem = ({ item }) => {
         <Component>
             <LeftComponent>
                 <img src={item.url} style={{height:120,width:110}} alt="product" />
-                <GroupButton />
+                <GroupButton product={item} />
             </LeftComponent>
             <Box style={{margin:'20px'}}>
                 <Typography>{addEllipsis(item.title.longTitle)}</Typography>
@@ -52,10 +52,10 @@ const CartItem = ({ item }) => {
                 </SmallText>
                 <Typography style={{margin:'20px 0'}}>
                     <Box component="span" style={{ fontWeight: 600,fontSize:18 }}>
-                        ₹{item.price.cost}
+                        ₹{item.price.cost*item.quantity}
                     </Box>&nbsp;&nbsp;&nbsp;
                     <Box component="span" style={{ color: '#878787' }}>
-                        <strike>₹{item.price.mrp}</strike>
+                        <strike>₹{item.price.mrp*item.quantity}</strike>
                     </Box>&nbsp;&nbsp;&nbsp;
                     <Box component="span" style={{ color: '#388E3C' }}>
                         {item.price.discount} off
