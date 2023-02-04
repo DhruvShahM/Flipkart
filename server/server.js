@@ -11,6 +11,11 @@ import {v4 as uuid} from 'uuid';
 const app=express();
 app.use(cors());
 app.options('*', cors());
+app.all('/*', function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "X-Requested-With");
+  next();
+});
 const absolute=path.resolve("./server/.env")
 const result =dotenv.config({path:absolute});
 if (result.error) {
@@ -32,6 +37,7 @@ const URL=process.env.MONGODB_URI || `mongodb://${USERNAME}:${PASSWORD}@ac-xduuc
 Connection(URL);
 
 if(process.env.NODE_ENV==='production'){
+  console.lof('client build running');
   app.use(express.static('client/build'));
 }
 
