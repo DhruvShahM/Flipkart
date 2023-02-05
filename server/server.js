@@ -58,6 +58,6 @@ paytmParams['CUST_ID']=process.env.PAYTM_CUST_ID;
 paytmParams['ORDER_ID']=uuid();
 paytmParams['TXN_AMOUNT']='100';
 paytmParams['CALLBACK_URL']=`${process.env.HOST_URL}/callback`;
-export let hostURL=process.env.WEB_URL;
+export let webURL=process.env.WEB_URL;
 paytmParams['EMAIL']='dhruvshahlinkedin@gmial.com';
 paytmParams['MOBILE_NO']='1234567890';
